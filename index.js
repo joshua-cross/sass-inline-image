@@ -11,7 +11,7 @@ var svg = function(buffer) {
         .replace(/\#/g, '%23')
         .replace(/\"/g, "'");
 
-    return '"data:image/svg+xml;utf8,' + svg + '"';
+    return '"data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg) + '"';
 };
 
 var img = function(buffer, ext) {
