@@ -9,9 +9,12 @@ var svg = function(buffer) {
         .replace(/\n/g, '')
         .replace(/\r/g, '')
         .replace(/\#/g, '%23')
-        .replace(/\"/g, "'");
+        .replace(/\"/g, '\'')
+        .replace(/\>/g, '%3E')
+        .replace(/\</g, '%3C')
+    ;
 
-    return '"data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg) + '"';
+    return '"data:image/svg+xml;charset=utf8,' + svg + '"';
 };
 
 var img = function(buffer, ext) {
